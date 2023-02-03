@@ -1,0 +1,133 @@
+
+
+// ******* problem no. 1 *****
+#include<iostream>
+using namespace std;
+int main(){
+    cout<<"MySirG";
+    return 0;
+}
+
+// ******* problem no. 2*****
+#include<iostream>
+using namespace std;
+int main(){
+    cout<<"Hello"<<endl<<"MySirG";
+    return 0;
+}
+
+
+// ******problem no. 3
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b;
+    cout<<" Enter 2 nums :- ";
+    cin>>a>>b;
+    cout<<" the sum is "<<a+b;
+    return 0;
+}
+// ******problem no. 4
+
+#include<iostream>
+using namespace std;
+int main(){
+    int r;
+    cout<<" Enter the radioud of the circle  ";
+    cin>>r;
+    cout<<" the area of the circle  is "<< 3.14159*r*r;
+    return 0;
+}
+
+// *****problem no. 5
+
+#include<iostream>
+using namespace std;
+int main(){
+    float l,w,h;
+    cout<<" Enter the length,width,height of the cuboid ";
+    cin>>l>>w>>h;
+    cout<<" the volume of the cuboid is "<< l*w*h;
+    return 0;
+}
+
+
+// *****problem no. 6
+
+#include<iostream>
+using namespace std;
+int main(){
+    float a,b,c;
+    cout<<" Enter the three nums  ";
+    cin>>a>>b>>c;
+    cout<<" the average of these is"<< a*b*c/3;
+    return 0;
+}
+
+// *****problem no. 7
+
+#include<iostream>
+using namespace std;
+int main(){
+    float n;
+    cout<<" Enter the num  ";
+    cin>>n;
+    cout<<" the square of the num is "<<n*n;
+    return 0;
+}
+
+// *****problem no. 8
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b;
+    cout<<" Enter the two variables  ";
+    cin>>a>>b;
+    cout<<"THe unswaped nums are :- "<<a << "and"<<b;
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    cout<<" the swaped nums are :- "<< a<<" and "<<b;
+    return 0;
+}
+// *****problem no. 9
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b;
+    cout<<" Enter the two nums   ";
+    cin>>a>>b;
+
+
+    if (a>b)
+    
+    cout<<" the maximum is  "<< a;
+    
+    else
+        cout<<" the maximum is  "<<b;
+
+
+    return 0;
+}
+
+
+// problem no. 10
+#include<iostream>
+using namespace std;
+int main ()
+{
+    int arr[10], n, i, sum = 0, pro = 1;
+    cout << "Enter the size of the array : ";
+    cin >> n;
+    cout << "\nEnter the elements of the array : ";
+    for (i = 0; i < n; i++)
+    cin >> arr[i];
+    for (i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+    cout << "\nSum of array elements : " << sum;
+    return 0;
+}

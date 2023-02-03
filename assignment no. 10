@@ -1,0 +1,111 @@
+// ****** problem no. 1******
+#include <stdio.h>
+float r;
+int main()
+{
+    float r, s;
+    printf("Enter the value of radius :- ");
+    scanf("%f", &r);
+    s = area(r);
+    printf("The area of the circle is %d", s);
+    return s;
+}
+
+int area(float r)
+{
+    float y;
+    y = 3.1428 * r * r;
+    return y;
+}
+
+// ****** problem no. 2******
+#include <stdio.h>
+int m, z, t;
+int main()
+{
+    int r, y, s, m, z, t;
+    printf("Enter the value of money, rate,time  :- ");
+    scanf("%d %d%d", &m, &z, &t);
+    s = sinterest(m, z, t);
+    printf("The simple interest is %d", s);
+    return s;
+}
+
+int sinterest(int m, int z, int t)
+{
+    int y;
+    y = (m * z * t) / 100;
+    return y;
+}
+
+
+
+// // ****** prob no. 4****
+
+#include <stdio.h>
+
+void natnum(int a);
+int main()
+{
+    int a, n;
+    printf(" Enter a number :- ");
+    scanf("%d", &n);
+    natnum(n);
+}
+void natnum(int n)
+{
+    int b, i = 1;
+    while (i <= n)
+    {
+        printf(" %d", i);
+        i++;
+    }
+}
+
+// ****** prob no. 5****
+
+#include <stdio.h>
+
+void natnum(int a);
+int main()
+{
+    int a, n;
+    printf(" Enter a number :- ");
+    scanf("%d", &n);
+    natnum(n);
+}
+void natnum(int n)
+{
+    int b, i = 1;
+    while (i <= n)
+    {
+        printf(" %d", 2 * i - 1);
+        i++;
+    }
+}
+
+// ****** problem no. 6*****
+#include <stdio.h>
+int i;
+int main()
+
+{
+    int a, b, r, i, c;
+    printf("Enter the num  :- ");
+    scanf("%d", &i);
+    c = factorial(i);
+    printf("The Answer  is %d", c);
+    return 0;
+}
+// ****** prob no. 8****
+
+int factorial(int i)
+{
+    int a = 1, b = 5, c;
+    for (i = 1; i <= b; i++)
+    {
+        a = a * i;
+        c = a;
+    }
+    return c;
+}

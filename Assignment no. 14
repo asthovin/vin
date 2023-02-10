@@ -1,0 +1,238 @@
+
+// ******** prob no. 1
+
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[10];
+    int sum = 0;
+
+cout << "Enter 10 numbers: " << sendl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+
+cout << "The sum of the numbers is: " << sum << endl;
+
+    return 0;
+}
+
+
+// ******** prob no. 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10];
+    int sum = 0;
+    double average;
+
+     cout<< "Enter 10 numbers: " << endl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+
+    average = sum / 10.0;
+
+    std::cout << "The average of the numbers is: " << average << std::endl;
+
+    return 0;
+}
+// ******** prob no. 3
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10];
+    int evenSum = 0;
+    int oddSum = 0;
+
+    cout << "Enter 10 numbers: " << endl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+        if (arr[i] % 2 == 0) {
+            evenSum += arr[i];
+        } else {
+            oddSum += arr[i];
+        }
+    }
+
+    cout << "The sum of even numbers is: " << evenSum << std::endl;
+    cout << "The sum of odd numbers is: " << oddSum << std::endl;
+
+    return 0;
+}
+// ******** prob no. 4
+#include <iostream>
+
+int main() {
+    int arr[10];
+    int max = arr[0];
+
+    cout << "Enter 10 numbers: " << endl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    cout << "The greatest number is: " << max << std::endl;
+
+    return 0;
+}
+// ******** prob no. 5
+#include <iostream>
+
+int main() {
+    int arr[10];
+    int min = arr[0];
+
+    cout << "Enter 10 numbers: " << endl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    cout << "The smallest number is: " << min << std::endl;
+
+    return 0;
+}
+
+
+// ******** prob no. 6
+
+#include <iostream>
+
+int main() {
+    int arr[10];
+
+    cout << "Enter 10 numbers: " << endl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < 9; i++) {
+        for (int j = i + 1; j < 10; j++) {
+            if (arr[i] > arr[j]) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    sout << "The sorted array is: " << std::endl;
+    for (int i = 0; i < 10; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << std::endl;
+
+    return 0;
+}
+
+// ******** prob no. 7
+
+#include <iostream>
+
+int main() {
+    int arr[10];
+    int max1 = arr[0];
+    int max2 = arr[1];
+
+    cout << "Enter 10 numbers: " << endl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+        if (arr[i] > max1) {
+            max2 = max1;
+            max1 = arr[i];
+        } else if (arr[i] > max2 && arr[i] != max1) {
+            max2 = arr[i];
+        }
+    }
+
+    cout << "The second largest number is: " << max2 << std::endl;
+
+    return 0;
+}
+
+
+
+// ******** prob no. 8
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n, min1, min2;
+  cout << "Enter the number of elements: ";
+  cin >> n;
+  int a[n];
+  cout << "Enter the elements: ";
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  min1 = min2 = a[0];
+  for (int i = 1; i < n; i++) {
+    if (a[i] < min1) {
+      min2 = min1;
+      min1 = a[i];
+    } else if (a[i] < min2 && a[i] != min1) {
+      min2 = a[i];
+    }
+  }
+  cout << "The second smallest number is: " << min2 << endl;
+  return 0;
+}
+
+
+// ******** prob no. 9
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n;
+  cout << "Enter the number of elements: ";
+  cin >> n;
+  int a[n];
+  cout << "Enter the elements: ";
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  cout << "The elements in reverse order are: ";
+  for (int i = n - 1; i >= 0; i--) {
+    cout << a[i] << " ";
+  }
+  cout << endl;
+  return 0;
+}
+
+// ******** prob no.  10
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n;
+  cout << "Enter the number of elements: ";
+  cin >> n;
+  int a[n], b[n];
+  cout << "Enter the elements of the first array: ";
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  for (int i = 0; i < n; i++) {
+    b[i] = a[i];
+  }
+  cout << "The elements of the second array are: ";
+  for (int i = 0; i < n; i++) {
+    cout << b[i] << " ";
+  }
+  cout << endl;
+  return 0;
+}

@@ -1,0 +1,238 @@
+
+
+
+// ************* problem no. 1
+#include <iostream>
+using namespace std;
+
+void nat(int n) {
+  if (n == 1) {
+    cout << n << " ";
+    return;
+  }
+  nat(n - 1);
+  cout << n << " ";
+}
+
+int main() {
+  int n;
+  cout << "Enter a positive integer: ";
+  cin >> n;
+  cout << "The first " << n << " natural numbers are: ";
+  nat(n);
+  return 0;
+}
+
+// ************* problem no. 2
+
+#include <iostream>
+using namespace std;
+
+void revrse(int n) {
+  if (n == 0) {
+    return;
+  }
+  cout << n << " ";
+  revrse(n - 1);
+}
+
+int main() {
+  int n;
+  cout << "Enter the value of N: ";
+  cin >> n;
+  cout << "First " << n << " naturjal numbers in reverse order are: ";
+  revrse(n);
+  return 0;
+}
+
+// ************* problem no. 3
+#include <iostream>
+using namespace std;
+
+void odd(int n, int i) {
+  if (n <= 0) {
+    return;
+  }
+  cout << i << " ";
+  odd(n - 1, i + 2);
+}
+
+int main() {
+  int n;
+  cout << "Enter the value of N: ";
+  cin >> n;
+  cout << "First " << n << " odd natural numbers are: ";
+  odd(n, 1);
+  return 0;
+}
+
+// ************* problem no. 4
+
+#include <iostream>
+using namespace std;
+
+void oddd(int n, int i) {
+  if (n == 0) {
+    return;
+  }
+  cout << i << " ";
+  oddd(n - 1, i - 2);
+}
+
+int main() {
+  int n;
+  cout << "Enter the value of N: ";
+  cin >> n;
+  cout << "First " << n << " odd natural numbers in reverse order : ";
+  oddd(n, 2 * n - 1);
+  return 0;
+}
+
+
+
+// ************* problem no. 5
+#include <iostream>
+using namespace std;
+void even(int n, int a = 2) {
+  if (n == 0) {
+    return;
+  }
+
+  even(n - 1, a + 2);
+}
+  cout << a<<" ";
+
+int main() {
+  int n;
+  cin >> n;
+  cout << "The first " << n << " even numbers are: ";
+  cout << "Enter the number of even numbers to print: ";
+  even(n);
+  cout << endl;
+  return 0;
+}
+
+// ************* problem no. 6
+
+#include <iostream>
+using namespace std;
+void reverse(int n, int s = 2) {
+  if (n <= 0) {
+    return;
+  }
+
+  reverse(n - 1, s + 2);
+  cout << s << " ";
+}
+
+int main() {
+  int n;
+  cout << "Enter the numbe to print: ";
+  cin >> n;
+  cout << "The first " << n << " even nums in reverse : ";
+  reverse(n);
+  cout << endl;
+  return 0;
+}
+
+
+
+
+// ************* problem no. 7
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void square(int n, int s = 1) {
+  if (n <= 0) {
+    return;
+  }
+
+  cout << pow(s, 2) << " ";
+  square(n - 1, s + 1);
+}
+
+int main() {
+  int n;
+  cout << "Enter the numberto print: ";
+  cin >> n;
+  cout << "The squares of " << n << " nums are: ";
+  square(n);
+  cout << endl;
+  return 0;
+}
+
+
+
+// ************* problem no. 8
+
+#include <iostream>
+using namespace std;
+
+void bin(int s) {
+  if (s < 2) {
+    cout << s;
+    return;
+  }
+
+  bin(s / 2);
+  cout << s % 2;
+}
+
+int main() {
+  int s;
+  cout << "Enter a decimal number: ";
+  cin >> s;
+  cout << "The binary representation of " << s << " is: ";
+  bin(s);
+  cout << endl;
+  return 0;
+}
+
+// ************* problem no. 9
+#include <iostream>
+using namespace std;
+void oct(int D) {
+  if (D < 8) {
+    cout << D;
+    return;
+  }
+
+  oct(D / 8);
+  cout << D % 8;
+}
+
+int main() {
+  int D;
+  cout << "Enter a decimal num: ";
+  cin >> D;
+  cout << "The octal of " << D << " is: ";
+  oct(D);
+  cout << endl;
+  return 0;
+}
+
+
+// ************* problem no. 10
+
+#include <iostream>
+using namespace std;
+void reverse(int N) {
+  if (N < 10) {
+    cout << N;
+    return;
+  }
+
+  cout << N % 10;
+  reverse(N / 10);
+}
+
+int main() {
+  int N;
+  cout << "Enter a number: ";
+  cin >> N;
+  cout << "The reverse of " << N << " is: ";
+  reverse(N);
+  cout << endl;
+  return 0;
+}

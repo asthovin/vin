@@ -1,0 +1,218 @@
+
+//******** problem no. 1******
+#include<iostream>
+using namespace std;
+
+int sumOfNaturalNumbers(int n) {
+    if (n == 0)
+        return 0;
+    return n + sumOfNaturalNumbers(n-1);
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "Sum of first " << n << " natural numbers is: " << sumOfNaturalNumbers(n);
+    return 0;
+}
+
+//******** problem no. 2******
+
+#include<iostream>
+using namespace std;
+
+int sumOfOddNumbers(int n) {
+    if (n == 1)
+        return 1;
+    return 2*n - 1 + sumOfOddNumbers(n-1);
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "Sum of first " << n << " odd natural numbers is: " << sumOfOddNumbers(n);
+    return 0;
+}
+
+//******** problem no. 3******
+
+#include<iostream>
+using namespace std;
+
+int sumOfEvenNumbers(int n) {
+    if (n == 0)
+        return 0;
+    return 2*n + sumOfEvenNumbers(n-1);
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "Sum of first " << n << " even natural numbers is: " << sumOfEvenNumbers(n);
+    return 0;
+}
+
+//******** problem no. 4******
+
+
+#include<iostream>
+using namespace std;
+
+int sumOfSquares(int n) {
+    if (n == 0)
+        return 0;
+    return n*n + sumOfSquares(n-1);
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "Sum of squares of first " << n << " natural numbers is: " << sumOfSquares(n);
+    return 0;
+}
+
+
+//******** problem no. 5******
+
+#include<iostream>
+using namespace std;
+
+int sumOfDigits(int n) {
+    if (n == 0)
+        return 0;
+    return n%10 + sumOfDigits(n/10);
+}
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    cout << "Sum of digits of " << n << " is: " << sumOfDigits(n);
+    return 0;
+}
+
+
+
+//******** problem no. 6******
+
+#include<iostream>
+using namespace std;
+
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n-1);
+}
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    cout << "Factorial of " << n << " is: " << factorial(n);
+    return 0;
+}
+
+
+//******** problem no. 7******
+
+
+
+#include <iostream>
+using namespace std;
+
+int hcf(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return hcf(b, a % b);
+}
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers to find HCF: ";
+    cin >> num1 >> num2;
+    cout << "HCF of " << num1 << " and " << num2 << " is " << hcf(num1, num2) << endl;
+    return 0;
+}
+
+
+//******** problem no. 8******
+
+
+
+#include <iostream>
+using namespace std;
+
+void fibonacci(int n, int a = 0, int b = 1) {
+    if (n <= 0) {
+        return;
+    }
+    cout << a << " ";
+    fibonacci(n - 1, b, a + b);
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "Fibonacci series: ";
+    fibonacci(n);
+    cout << endl;
+    return 0;
+}
+
+
+//******** problem no. 9******
+
+
+#include <iostream>
+using namespace std;
+
+int countDigits(int num) {
+    if (num == 0) {
+        return 0;
+    }
+    return 1 + countDigits(num / 10);
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Number of digits in " << num << " is " << countDigits(num) << endl;
+    return 0;
+    
+    
+    //******** problem no. 10 ******
+
+    #include <iostream>
+using namespace std;
+
+int power(int base, int exponent) {
+    if (exponent == 0) {
+        return 1;
+    }
+    return base * power(base, exponent - 1);
+}
+
+int main() {
+    int base, exponent;
+    cout << "Enter the base: ";
+    cin >> base;
+    cout << "Enter the exponent: ";
+    cin >> exponent;
+    cout << base << " raised to the power of " << exponent << " is " << power(base, exponent) << endl;
+    return 0;
+}
+
+}
+
+
+
+
+
+

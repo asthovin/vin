@@ -1,0 +1,252 @@
+//***** pro no. 1******
+#include<iostream>
+using namespace std;
+
+int lcm(int a, int b) {
+    int max_num = (a > b) ? a : b;
+    do {
+        if (max_num % a == 0 && max_num % b == 0)
+            return max_num;
+        else
+            max_num++;
+    } while (true);
+}
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    cout << "LCM of " << num1 << " and " << num2 << " is: " << lcm(num1, num2);
+    return 0;
+}
+//*****prob nom 2
+#include<iostream>
+using namespace std;
+
+int hcf(int a, int b) {
+    int min_num = (a < b) ? a : b;
+    int hcf_num = 1;
+    for (int i = 2; i <= min_num; i++) {
+        if (a % i == 0 && b % i == 0)
+            hcf_num = i;
+    }
+    return hcf_num;
+}
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    cout << "HCF of " << num1 << " and " << num2 << " is: " << hcf(num1, num2);
+    return 0;
+}
+
+//*****prob no. 3
+#include<iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) 
+        return false;
+    for (int i = 2; i <= n/2; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    if (isPrime(num))
+        cout << num << " is a Prime number.";
+    else
+        cout << num << " is not a Prime number.";
+    return 0;
+}
+//*****prob no. 4
+#include<iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) 
+        return false;
+    for (int i = 2; i <= n/2; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int getNextPrime(int n) {
+    int next = n + 1;
+    while (!isPrime(next)) {
+        next++;
+    }
+    return next;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Next prime number of " << num << " is: " << getNextPrime(num);
+    return 0;
+}
+//*******prob no. 5*******
+#include<iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) 
+        return false;
+    for (int i = 2; i <= n/2; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+void printNPrimes(int n) {
+    int count = 0, num = 2;
+    while (count < n) {
+        if (isPrime(num)) {
+            cout << num << " ";
+            count++;
+        }
+        num++;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "First " << n << " prime numbers are: ";
+    printNPrimes(n);
+    return 0;
+}
+//****prob no. 6
+#include<iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) 
+        return false;
+    for (int i = 2; i <= n/2; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+void printPrimeBetween(int a, int b) {
+    cout << "Prime numbers between " << a << " and " << b << " are: ";
+    for (int i = a; i <= b; i++) {
+        if (isPrime(i))
+            cout << i << " ";
+    }
+}
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    printPrimeBetween(num1, num2);
+    return 0;
+}
+
+
+//****** prob no. 7
+#include<iostream>
+using namespace std;
+
+void printNFibonacci(int n) {
+    int num1 = 0, num2 = 1, nextNum;
+    cout << num1 << " " << num2 << " ";
+    for (int i = 3; i <= n; i++) {
+        nextNum = num1 + num2;
+        cout << nextNum << " ";
+        num1 = num2;
+        num2 = nextNum;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "First " << n << " terms of Fibonacci series are: ";
+    printNFibonacci(n);
+    return 0;
+}
+//****** prob no. 8
+#include<iostream>
+using namespace std;
+
+int binomialCoeff(int n, int k) {
+    if (k == 0 || k == n)
+        return 1;
+    return binomialCoeff(n-1, k-1) + binomialCoeff(n-1, k);
+}
+
+void printPascalTriangle(int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            cout << binomialCoeff(i, j) << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter the number of rows for Pascal Triangle: ";
+    cin >> n;
+    printPascalTriangle(n);
+    return 0;
+}
+//***** prob no. 9
+
+#include<iostream>
+using namespace std;
+
+int square(int n) {
+    return n*n;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Square of " << num << " is " << square(num);
+    return 0;
+}
+//*** prob no. 10
+#include<iostream>
+using namespace std;
+
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n-1);
+}
+
+float sumOfSeries(int n) {
+    float sum = 0.0;
+    for (int i = 1; i <= n; i++) {
+        sum += (float) factorial(i)/i;
+    }
+    return sum;
+}
+
+int main() {
+    int n;
+    cout << "Enter the value of N: ";
+    cin >> n;
+    cout << "Sum of the series is: " << sumOfSeries(n);
+    return 0;
+}
+
+

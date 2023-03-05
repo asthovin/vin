@@ -1,0 +1,254 @@
+// ******prob no. 1 *******
+#include <iostream>
+using namespace std;
+
+int fibonacci(int n){
+   if(n<=1)
+      return n;
+   return fibonacci(n-1)+fibonacci(n-2);
+}
+
+int main(){
+   int n;
+   cout<<"Enter the value of n: ";
+   cin>>n;
+   cout<<"The "<<n<<"th term of the Fibonacci series is: "<<fibonacci(n)<<endl;
+   return 0;
+}
+
+// ******prob no. 2 *******
+#include <iostream>
+using namespace std;
+
+void fibonacci(int n){
+   int a=0, b=1, c;
+   cout<<a<<" "<<b<<" ";
+   for(int i=2; i<n; i++){
+      c=a+b;
+      cout<<c<<" ";
+      a=b;
+      b=c;
+   }
+}
+
+int main(){
+   int n;
+   cout<<"Enter the value of n: ";
+   cin>>n;
+   cout<<"The first "<<n<<" terms of the Fibonacci series are: ";
+   fibonacci(n);
+   cout<<endl;
+   return 0;
+}
+
+// ******prob no. 3 *******
+#include <iostream>
+using namespace std;
+
+bool isFibonacci(int n){
+   int a=0, b=1, c;
+   while(c<n){
+      c=a+b;
+      a=b;
+      b=c;
+   }
+   if(c==n)
+      return true;
+   else
+      return false;
+}
+
+int main(){
+   int n;
+   cout<<"Enter the number to check: ";
+   cin>>n;
+   if(isFibonacci(n))
+      cout<<n<<" is a Fibonacci number"<<endl;
+   else
+      cout<<n<<" is not a Fibonacci number"<<endl;
+   return 0;
+}
+
+// ******prob no. 4*******
+#include <iostream>
+using namespace std;
+
+int hcf(int a, int b){
+   if(b==0)
+      return a;
+   else
+      return hcf(b, a%b);
+}
+
+int main(){
+   int a, b;
+   cout<<"Enter two numbers: ";
+   cin>>a>>b;
+   cout<<"The HCF of "<<a<<" and "<<b<<" is "<<hcf(a,b)<<endl;
+   return 0;
+}
+
+// ******prob no. 5 *******
+#include <iostream>
+using namespace std;
+
+int hcf(int a, int b){
+   if(b==0)
+      return a;
+   else
+      return hcf(b, a%b);
+}
+
+bool isCoprime(int a, int b){
+   if(hcf(a,b)==1)
+      return true;
+   else
+      return false;
+}
+
+int main(){
+   int a, b;
+   cout<<"Enter two numbers: ";
+   cin>>a>>b;
+   if(isCoprime(a,b))
+      cout<<a<<" and "<<b<<" are co-prime numbers"<<endl;
+   else
+      cout<<a<<" and "<<b<<" are not co-prime numbers"<<endl;
+   return 0;
+}
+
+// ******prob no. 6 *******
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n){
+   if(n<=1)
+      return false;
+   for(int i=2; i<=n/2; i++){
+      if(n%i==0)
+         return false;
+   }
+   return true;
+}
+
+int main(){
+   cout<<"Prime numbers under 100 are: ";
+   for(int i=2; i<100; i++){
+      if(isPrime(i))
+         cout<<i<<" ";
+   }
+   cout<<endl;
+   return 0;
+}
+
+// ******prob no. 7 *******
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n){
+   if(n<=1)
+      return false;
+   for(int i=2; i<=n/2; i++){
+      if(n%i==0)
+         return false;
+   }
+   return true;
+}
+
+int main(){
+   int start, end;
+   cout<<"Enter the starting number: ";
+   cin>>start;
+   cout<<"Enter the ending number: ";
+   cin>>end;
+   cout<<"Prime numbers between "<<start<<" and "<<end<<" are: ";
+   for(int i=start; i<=end; i++){
+      if(isPrime(i))
+         cout<<i<<" ";
+   }
+   cout<<endl;
+   return 0;
+}
+
+// ******prob no. 8 *******
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n){
+   if(n<=1)
+      return false;
+   for(int i=2; i<=n/2; i++){
+      if(n%i==0)
+         return false;
+   }
+   return true;
+}
+
+int nextPrime(int n){
+   int next = n+1;
+   while(!isPrime(next)){
+      next++;
+   }
+   return next;
+}
+
+int main(){
+   int n;
+   cout<<"Enter a number: ";
+   cin>>n;
+   cout<<"The net prime numr after "<<n<<" is "<<nextPrime(n)<<endl;
+   return 0;
+}
+
+// ******prob no. 9 *******
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+   int n, temp, digits=0, sum=0;
+   cout<<"Enter a numer: ";
+   cin>>n;
+   temp = n;
+   while(temp>0){
+      digits++;
+      temp/=10;
+   }
+   temp = n;
+   while(temp>0){
+      int rem = temp%10;
+      sum += pow(rem,digits);
+      temp/=10;
+   }
+   if(sum==n)
+      cout<<n<<" is an Armstrong number"<<endl;
+   else
+      cout<<n<<" is not an Armstrong number"<<endl;
+   return 0;
+}
+
+// ******prob no. 10 *******
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+   cout<<"Armstrong numbers under 1000 are: ";
+   for(int i=1; i<=999; i++){
+      int temp = i, digits=0, sum=0;
+      while(temp>0){
+         digits++;
+         temp/=10;
+      }
+      temp = i;
+      while(temp>0){
+         int rem = temp%10;
+         sum += pow(rem,digits);
+         temp/=10;
+      }
+      if(sum==i)
+         cout<<i<<" ";
+   }
+   cout<<endl;
+   return 0;
+}

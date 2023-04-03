@@ -1,0 +1,368 @@
+//prob no. 1***************
+#include <iostream>
+using namespace std;
+
+int count_vowels(string str) {
+    int count = 0;
+    for(int i=0; i<str.length(); i++) {
+        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+           str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    string strings[5][100];
+    int vowels[5] = {0};
+    for(int i=0; i<5; i++) {
+        cout << "Enter string " << i+1 << ": ";
+        getline(cin, strings[i][100]);
+        vowels[i] = count_vowels(strings[i][100]);
+    }
+    for(int i=0; i<5; i++) {
+        cout << "String " << i+1 << " has " << vowels[i] << " vowels" << endl;
+    }
+    return 0;
+}
+//prob 2********
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string cities[10][100];
+    for(int i=0; i<10; i++) {
+        cout << "Enter city " << i+1 << ": ";
+        getline(cin, cities[i][100]);
+    }
+    sort(cities, cities+10);
+    cout << "Sorted list of cities is:" << endl;
+    for(int i=0; i<10; i++) {
+        cout << cities[i][100] << endl;
+    }
+    return 0;
+}
+
+//prob 3***************
+#include <stdio.h>
+
+int main() {
+    char strings[3][100];
+    for(int i=0; i<3; i++) {
+        printf("Enter string %d: ", i+1);
+        scanf("%s", strings[i]);
+    }
+    printf("Strings are:\n");
+    for(int i=0; i<3; i++) {
+        printf("%s\n", strings[i]);
+    }
+    return 0;
+}
+//prob 4*************
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string strings[5][100];
+    for(int i=0; i<5; i++) {
+        cout << "Enter string " << i+1 << ": ";
+        getline(cin, strings[i][100]);
+    }
+    string search_str;
+    cout << "Enter string to search: ";
+    getline(cin, search_str);
+    bool found = false;
+    for(int i=0; i<5; i++) {
+        if(strings[i][100] == search_str) {
+            found = true;
+            break;
+        }
+    }
+    if(found) {
+        cout << "String found in list" << endl;
+    } else {
+        cout << "String not found in list" << endl;
+    }
+    return 0;
+}
+
+
+//prob 5************
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<string> email_list;
+    string email;
+    int odd_index = -1;
+
+    // get email list from user
+    cout << "Enter email addresses (type 'done' when finished):" << endl;
+    while (true) {
+        cin >> email;
+        if (email == "done") {
+            break;
+        }
+        email_list.push_back(email);
+    }
+
+    // check each email for '@' and find odd email out
+    for (int i = 0; i < email_list.size(); i++) {
+        if (email_list[i].find('@') == string::npos) {
+            cout << "Email address " << email_list[i] << " is missing '@'." << endl;
+        }
+        if (i % 2 == 1 && odd_index == -1) {
+            odd_index = i;
+        }
+    }
+
+    // print odd email out, if exists
+    if (odd_index != -1) {
+        cout << "Odd email out: " << email_list[odd_index] << endl;
+    }
+
+    return 0;
+}
+
+
+//prob 6**************
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+bool is_palindrome(string s) {
+    int i = 0, j = s.length() - 1;
+    while (i < j) {
+        if (s[i] != s[j]) {
+            return false;
+        }
+        i++;
+        j--;
+    }
+    return true;
+}
+
+int main() {
+    vector<string> str_list;
+    string str;
+
+    // get string list from user
+    cout << "Enter strings (type 'done' when finished):" << endl;
+    while (true) {
+        cin >> str;
+        if (str == "done") {
+            break;
+        }
+        str_list.push_back(str);
+    }
+
+    // print palindromes in the list
+    for (int i = 0; i < str_list.size(); i++) {
+        if (is_palindrome(str_list[i])) {
+            cout << str_list[i] << " is a palindrome." << endl;
+        }
+    }
+
+    return 0;
+}
+//prob 7***************
+#include <iostream>
+#include <string>
+#include <regex>
+using namespace std;
+
+int main()
+{
+    string ip_addresses[5] = {"192.168.1.1", "10.0.0.1", "256.0.0.0", "172.16.0.1", "192.168.1.256"};
+
+    regex pattern("^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$");
+
+    for (int i = 0; i < 5; i++)
+    {
+        bool valid = true;
+        smatch match;
+        if (!regex_match(ip_addresses[i], match, pattern))
+        {
+            valid = false;
+        }
+        else
+        {
+            for (int j = 1; j <= 4; j++)
+            {
+                int value = stoi(match[j]);
+                if (value < 0 || value > 255)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+        }
+
+        if (valid)
+        {
+            cout << ip_addresses[i] << " is a valid IP address." << endl;
+        }
+        else
+        {
+            cout << ip_addresses[i] << " is not a valid IP address." << endl;
+        }
+    }
+
+    return 0;
+}
+//prob  8************
+#include <iostream>
+#include <string>
+#include <vector>
+#include <limits.h>
+
+using namespace std;
+
+int minDistance(vector<string> words, string word1, string word2) {
+    int idx1 = -1, idx2 = -1;
+    int minDist = INT_MAX;
+    for (int i = 0; i < words.size(); i++) {
+        if (words[i] == word1) {
+            idx1 = i;
+            if (idx2 != -1) {
+                minDist = min(minDist, abs(idx1 - idx2));
+            }
+        } else if (words[i] == word2) {
+            idx2 = i;
+            if (idx1 != -1) {
+                minDist = min(minDist, abs(idx1 - idx2));
+            }
+        }
+    }
+    return minDist;
+}
+
+int main() {
+    vector<string> words = {"the", "quick", "brown", "fox", "quick"};
+    string word1 = "the", word2 = "fox";
+    cout << "Minimum distance between " << word1 << " and " << word2 << " is: " << minDistance(words, word1, word2) << endl;
+    return 0;
+}
+//prob 9***********
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+bool isUserInList(vector<string> userList, string username) {
+    if (find(userList.begin(), userList.end(), username) != userList.end()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    vector<string> userList = {"Alice", "Bob", "Charlie", "Dave"};
+    string username;
+    int n;
+    cout << "Enter a username: ";
+    cin >> username;
+    if (isUserInList(userList, username)) {
+        cout << "Enter a number to calculate its factorial: ";
+        cin >> n;
+        cout << "Factorial of " << n << " is: " << factorial(n) << endl;
+    } else {
+        cout << "Error: Invalid username" << endl;
+    }
+    return 0;
+}
+//prob 10**************
+
+#include <iostream>
+#include <string>
+#include <unordered_map>
+
+using namespace std;
+
+unordered_map<string, string> userCredentials;
+
+bool authenticateUser(string username, string password) {
+  if (userCredentials.find(username) != userCredentials.end()) {
+    if (userCredentials[username] == password) {
+      cout << "Authentication successful!" << endl;
+      return true;
+    }
+  }
+  // If the username or password is incorrect, return false
+  cout << "Incorrect username or password. Please try again." << endl;
+  return false;
+}
+
+void registerUser(string username, string password) {
+  if (userCredentials.find(username) != userCredentials.end()) {
+    cout << "Error: Username already exists." << endl;
+  } else {
+    userCredentials[username] = password;
+    cout << "New user registered successfully." << endl;
+  }
+}
+
+int main() {
+  int choice = 0;
+  string username, password;
+
+  userCredentials["alice"] = "password123";
+  userCredentials["bob"] = "qwerty";
+
+  while (choice != 3) {
+    cout << "\nMenu:\n";
+    cout << "1. Login\n";
+    cout << "2. Register\n";
+    cout << "3. Exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    switch (choice) {
+      case 1:
+        cout << "Enter username: ";
+        cin >> username;
+        cout << "Enter password: ";
+        cin >> password;
+        authenticateUser(username, password);
+        break;
+
+      case 2:
+        cout << "Enter new username: ";
+        cin >> username;
+        cout << "Enter new password: ";
+        cin >> password;
+        registerUser(username, password);
+        break;
+
+      case 3:
+        cout << "Exiting program." << endl;
+        break;
+
+      default:
+        cout << "Invalid choice. Please try again." << endl;
+        break;
+    }
+  }
+
+  return 0;
+}
+

@@ -1,0 +1,245 @@
+// prob no. 1*******
+#include <iostream>
+using namespace std;
+
+int string_length(string str) {
+    return str.length();
+}
+
+int main() {
+    string str = "Hello World!";
+    cout << "Length of string is " << string_length(str) << endl;
+    return 0;
+}
+// prob no. 2*******
+#include <iostream>
+using namespace std;
+
+string reverse_string(string str) {
+    int n = str.length();
+    for(int i=0; i<n/2; i++) {
+        swap(str[i], str[n-i-1]);
+    }
+    return str;
+}
+
+int main() {
+    string str = "Hello World!";
+    cout << "Reversed string is " << reverse_string(str) << endl;
+    return 0;
+}
+//prob 3*********
+#include <iostream>
+using namespace std;
+
+bool compare_strings(string str1, string str2) {
+    if(str1 == str2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    string str1 = "Hello";
+    string str2 = "World";
+    if(compare_strings(str1, str2)) {
+        cout << "Strings are equal" << endl;
+    } else {
+        cout << "Strings are not equal" << endl;
+    }
+    return 0;
+}
+//prob 4
+
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+string uppercase_string(string str) {
+    transform(str.begin(), str.end(), str.begin(), ::toupper);
+    return str;
+}
+
+int main() {
+    string str = "hello world!";
+    cout << "Uppercase string is " << uppercase_string(str) << endl;
+    return 0;
+}
+//prob 5*******
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+string lowercase_string(string str) {
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    return str;
+}
+
+int main() {
+    string str = "HELLO WORLD!";
+    cout << "Lowercase string is " << lowercase_string(str) << endl;
+    return 0;
+}
+//prob 6******
+#include <iostream>
+#include <ctype.h>
+using namespace std;
+
+bool is_alphanumeric_string(string str) {
+    bool has_alpha = false, has_digit = false;
+    for(int i=0; i<str.length(); i++) {
+        if(isalpha(str[i])) {
+            has_alpha = true;
+        } else if(isdigit(str[i])) {
+            has_digit = true;
+        }
+    }
+    if(has_alpha && has_digit) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    string str = "My5irg";
+    if(is_alphanumeric_string(str)) {
+        cout << "String is alphanumeric" << endl;
+    } else {
+        cout << "String is not alphanumeric" << endl;
+    }
+    return 0;
+}
+//prob 7**********
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool is_palindrome(string str) {
+    int n = str.length();
+    for(int i=0; i<n/2; i++) {
+        if(str[i] != str[n-i-1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    string str = "racecar";
+    if(is_palindrome(str)) {
+        cout << "String is palindrome" << endl;
+    } else {
+        cout << "String is not palindrome" << endl;
+    }
+    return 0;
+}
+//prob 8*******
+#include <iostream>
+using namespace std;
+
+int count_words(string str) {
+    int count = 0;
+    for(int i=0; i<str.length(); i++) {
+        if(isspace(str[i])) {
+            count++;
+        }
+    }
+    return count+1;
+}
+
+int main() {
+    string str = "Hello World!";
+    cout << "Number of words in string is " << count_words(str) << endl;
+    return 0;
+}
+//prob 9*******
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+string reverse_string_wordwise(string str) {
+    stringstream ss(str);
+    vector<string> words;
+    string word;
+    while(ss >> word) {
+        words.push_back(word);
+    }
+    reverse(words.begin(), words.end());
+    string reversed_str = "";
+    for(int i=0; i<words.size(); i++) {
+        reversed_str += words[i];
+        if(i != words.size()-1) {
+            reversed_str += " ";
+        }
+    }
+    return reversed_str;
+}
+
+int main() {
+    string str = "Mysirg Education Services";
+    cout << "Reversed string is " << reverse_string_wordwise(str) << endl;
+    return 0;
+}
+
+
+//prob 10************
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+char find_repeated_char(string str) {
+    unordered_map<char, int> char_count;
+    for(int i=0; i<str.length(); i++) {
+        char_count[str[i]]++;
+    }
+    for(int i=0; i<str.length(); i++) {
+        if(char_count[str[i]] > 1) {
+            return str[i];
+        }
+    }
+    return ' ';
+}
+
+int main() {
+    string str = "hello world";
+    char repeated_char = find_repeated_char(str);
+    if(repeated_char != ' ') {
+        cout << "First repeated character is " << repeated_char << endl;
+    } else {
+        cout << "No repeated character found" << endl;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
